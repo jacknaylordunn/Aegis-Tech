@@ -96,7 +96,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               </Button>
               <Button 
                 onClick={() => onNavigate('/aspis')} 
-                className="bg-white text-blue-600 hover:bg-gray-50 px-10 py-4 text-lg border-0 font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300"
+                className="bg-white text-blue hover:bg-gray-50 px-10 py-4 text-lg border-0 font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300"
               >
                 Discover Aspis
               </Button>
