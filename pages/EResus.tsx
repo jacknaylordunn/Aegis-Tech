@@ -35,9 +35,12 @@ export const EResus: React.FC = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={0.6}>
-               <div className="flex justify-center items-center space-x-6">
-                  <Button href="https://apps.apple.com/gb/app/eresus/id6753123316" className="bg-white !text-black hover:bg-gray-200 px-10 py-4 text-lg border-0 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                  <Button href="https://apps.apple.com/gb/app/eresus/id6753123316" className="bg-white !text-black hover:bg-gray-200 px-10 py-4 text-lg border-0 shadow-[0_0_30px_rgba(255,255,255,0.2)] w-full sm:w-auto">
                     Download on App Store
+                  </Button>
+                  <Button href="https://eresus.app" className="bg-transparent border border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg w-full sm:w-auto">
+                    Open Web App
                   </Button>
                </div>
             </ScrollReveal>
@@ -53,6 +56,52 @@ export const EResus: React.FC = () => {
                </div>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* What's New Section */}
+      <section className="py-24 bg-white/5 border-y border-white/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="inline-block px-4 py-1.5 rounded-full bg-red-500/20 border border-red-500/30 text-red-400 text-sm font-semibold tracking-wide uppercase mb-8">
+              What's New in v1.1
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tighter">
+              Newborn Life Support & Smarter Logic
+            </h2>
+            
+            <div className="space-y-6 text-lg text-gray-300 font-light leading-relaxed">
+              <p>
+                As requested by many users, eResus now hosts a brand new <strong>Newborn Life Support Module</strong>: A fully interactive interface and algorithm to guide you through transition-to-life and newborn resuscitation.
+              </p>
+              
+              <p>We have also...</p>
+              
+              <ul className="space-y-4 pl-2">
+                <li className="flex items-start">
+                  <Check className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-0.5" />
+                  <span><strong>Improved Drug Logic:</strong> Enhanced backend calculations for faster, safer drug administration prompts.</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-0.5" />
+                  <span><strong>Better Handovers:</strong> Improved the saved summary and log layout to make your handovers as smooth as possible. All saved logs prior to this update will remain visible, but some users may experience inaccurate details.</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-0.5" />
+                  <span><strong>General UI & Bug Fixes:</strong> Performance updates and layout refinements for a smoother, more reliable experience in the field.</span>
+                </li>
+              </ul>
+
+              <div className="pt-6 mt-6 border-t border-white/10">
+                <p className="mb-6">
+                  If you find eResus helpful in your clinical practice, please consider leaving a review on the App Store. Your feedback helps us continue to improve life-saving tools for the frontline.
+                </p>
+                <p className="text-xl font-medium text-white italic">
+                  Master every resus with eResus. Real-time algorithms, precise drug calculations, and now a brand-new Newborn Life Support interface. Built for clinicians, by clinicians.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -167,9 +216,14 @@ export const EResus: React.FC = () => {
          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
          <ScrollReveal>
             <h2 className="text-5xl font-bold mb-12 tracking-tighter text-white">Upgrade your toolkit.</h2>
-            <Button href="https://apps.apple.com/gb/app/eresus/id6753123316" className="bg-white !text-black hover:bg-gray-200 px-12 py-5 text-xl rounded-full">
-               Get eResus
-            </Button>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <Button href="https://apps.apple.com/gb/app/eresus/id6753123316" className="bg-white !text-black hover:bg-gray-200 px-12 py-5 text-xl rounded-full w-full sm:w-auto">
+                 Get eResus for iOS
+              </Button>
+              <Button href="https://eresus.app" className="bg-transparent border border-white/30 text-white hover:bg-white/10 px-12 py-5 text-xl rounded-full w-full sm:w-auto">
+                 Open Web App (Android)
+              </Button>
+            </div>
          </ScrollReveal>
       </section>
     </div>

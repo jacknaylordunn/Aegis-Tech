@@ -6,6 +6,7 @@ import { EResus } from './pages/EResus';
 import { Aspis } from './pages/Aspis';
 import { CPRStat } from './pages/CPRStat';
 import { Prescription } from './pages/Prescription';
+import { EResusDataPolicy } from './pages/EResusDataPolicy';
 
 const AppContent: React.FC = () => {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ const AppContent: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home onNavigate={handleNavigate} />} />
         <Route path="/eresus" element={<EResus />} />
+        <Route path="/eresus/data-policy" element={<EResusDataPolicy />} />
         <Route path="/aspis" element={<Aspis />} />
         <Route path="/cprstat" element={<CPRStat />} />
         <Route path="/prescription" element={<Prescription />} />
