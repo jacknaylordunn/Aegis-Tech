@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../components/Button';
 import { ScrollReveal } from '../components/ScrollReveal';
-import { Clock, Zap, ShieldCheck, Check, Lock, WifiOff, Database } from 'lucide-react';
+import { Clock, Zap, ShieldCheck, Check, Lock, WifiOff, Database, ChevronDown, ChevronUp } from 'lucide-react';
 
 export const EResus: React.FC = () => {
+  const [openTab, setOpenTab] = useState<string>('v1.2');
+
   return (
     <div className="bg-black text-white overflow-hidden">
       {/* Product Hero */}
@@ -48,9 +50,9 @@ export const EResus: React.FC = () => {
             <ScrollReveal delay={0.8} className="mt-24 w-full max-w-4xl">
                <div className="relative">
                  <img 
-                   src="https://145955222.fs1.hubspotusercontent-eu1.net/hubfs/145955222/AMS/Tech/Untitled%20design%20(2).png" 
+                   src="https://145955222.fs1.hubspotusercontent-eu1.net/hubfs/145955222/eResus/eResus%20website%20image.png" 
                    alt="eResus Interface" 
-                   className="w-full h-auto rounded-3xl shadow-2xl border border-white/10"
+                   className="w-full h-auto drop-shadow-2xl"
                  />
                  <div className="absolute -inset-4 bg-red-600/20 blur-[60px] -z-10 rounded-full"></div>
                </div>
@@ -63,45 +65,128 @@ export const EResus: React.FC = () => {
       <section className="py-24 bg-white/5 border-y border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="inline-block px-4 py-1.5 rounded-full bg-red-500/20 border border-red-500/30 text-red-400 text-sm font-semibold tracking-wide uppercase mb-8">
-              What's New in v1.1
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tighter">
-              Newborn Life Support & Smarter Logic
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 tracking-tighter text-center">
+              What's New in eResus
             </h2>
-            
-            <div className="space-y-6 text-lg text-gray-300 font-light leading-relaxed">
-              <p>
-                As requested by many users, eResus now hosts a brand new <strong>Newborn Life Support Module</strong>: A fully interactive interface and algorithm to guide you through transition-to-life and newborn resuscitation.
-              </p>
-              
-              <p>We have also...</p>
-              
-              <ul className="space-y-4 pl-2">
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-0.5" />
-                  <span><strong>Improved Drug Logic:</strong> Enhanced backend calculations for faster, safer drug administration prompts.</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-0.5" />
-                  <span><strong>Better Handovers:</strong> Improved the saved summary and log layout to make your handovers as smooth as possible. All saved logs prior to this update will remain visible, but some users may experience inaccurate details.</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-0.5" />
-                  <span><strong>General UI & Bug Fixes:</strong> Performance updates and layout refinements for a smoother, more reliable experience in the field.</span>
-                </li>
-              </ul>
-
-              <div className="pt-6 mt-6 border-t border-white/10">
-                <p className="mb-6">
-                  If you find eResus helpful in your clinical practice, please consider leaving a review on the App Store. Your feedback helps us continue to improve life-saving tools for the frontline.
-                </p>
-                <p className="text-xl font-medium text-white italic">
-                  Master every resus with eResus. Real-time algorithms, precise drug calculations, and now a brand-new Newborn Life Support interface. Built for clinicians, by clinicians.
-                </p>
-              </div>
-            </div>
           </ScrollReveal>
+
+          <div className="space-y-4">
+            {/* v1.2 */}
+            <ScrollReveal>
+              <div className="border border-white/10 rounded-2xl bg-black/50 overflow-hidden transition-all duration-300">
+                <button 
+                  onClick={() => setOpenTab(openTab === 'v1.2' ? '' : 'v1.2')}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
+                >
+                  <div>
+                    <div className="inline-block px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 text-xs font-semibold tracking-wide uppercase mb-3">
+                      Version 1.2
+                    </div>
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
+                      Research Mode, Live Session Transfer & Sync
+                    </h3>
+                  </div>
+                  {openTab === 'v1.2' ? (
+                    <ChevronUp className="w-6 h-6 text-gray-400 shrink-0 ml-4" />
+                  ) : (
+                    <ChevronDown className="w-6 h-6 text-gray-400 shrink-0 ml-4" />
+                  )}
+                </button>
+                
+                <div className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${openTab === 'v1.2' ? 'max-h-[2000px] pb-8 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className="space-y-6 text-lg text-gray-300 font-light leading-relaxed pt-4 border-t border-white/10">
+                    <p>
+                      In this version, we are introducing <strong>Research Mode</strong>...
+                    </p>
+                    <p>
+                      When enabled, Research Mode allows our clinicians to collect data from your resus logs to help improve cardiac arrest outcomes. You can now opt in to anonymously contribute your resuscitation data to ongoing research - choose your ambulance trust and get started in seconds. Opt out at any time. Over the coming months, Aegis Medical Solutions and our Paramedic led team hope to begin making this data and ongoing research available to the public through forms of journal articles and published studies.
+                    </p>
+
+                    <p>
+                      This update also brings <strong>Live Session Transfer</strong> to eResus - Battery running low, or another crew taking over the arrest? You can now hand off a live arrest to another device instantly. Just AirDrop or Generate a secure QR code and scan it on any second device - iPhone, iPad, Android, or web - to pick up right where you left off.
+                    </p>
+                    
+                    <p>Other great features that are new in this update include...</p>
+                    
+                    <ul className="space-y-4 pl-2">
+                      <li className="flex items-start">
+                        <Check className="w-6 h-6 text-blue-500 mr-4 shrink-0 mt-0.5" />
+                        <span><strong>Authentication - Sign In & Sync:</strong> Create an account with Apple, Google, or email to sync your logbook across devices. Prefer not to? No problem - the app still works fully without signing in.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="w-6 h-6 text-blue-500 mr-4 shrink-0 mt-0.5" />
+                        <span><strong>Smarter Logbook:</strong> Add patient age and gender to any log, even after the arrest has ended. Your logbook now displays this info at a glance, and every summary includes real-world timestamps for IV/IO access, airway management, and ROSC.</span>
+                      </li>
+                    </ul>
+
+                    <div className="pt-6 mt-6 border-t border-white/10">
+                      <p className="mb-6">
+                        We are excited for you to try these new features and to share with you what we think is the number one digital cardiac arrest scribe for UK healthcare professionals!
+                      </p>
+                      <p>
+                        If you find eResus helpful in your clinical practice, please consider leaving a review on the App Store. Your feedback helps us continue to improve life-saving tools for the frontline.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* v1.1 */}
+            <ScrollReveal>
+              <div className="border border-white/10 rounded-2xl bg-black/50 overflow-hidden transition-all duration-300">
+                <button 
+                  onClick={() => setOpenTab(openTab === 'v1.1' ? '' : 'v1.1')}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
+                >
+                  <div>
+                    <div className="inline-block px-3 py-1 rounded-full bg-red-500/20 border border-red-500/30 text-red-400 text-xs font-semibold tracking-wide uppercase mb-3">
+                      Version 1.1
+                    </div>
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
+                      Newborn Life Support & Smarter Logic
+                    </h3>
+                  </div>
+                  {openTab === 'v1.1' ? (
+                    <ChevronUp className="w-6 h-6 text-gray-400 shrink-0 ml-4" />
+                  ) : (
+                    <ChevronDown className="w-6 h-6 text-gray-400 shrink-0 ml-4" />
+                  )}
+                </button>
+                
+                <div className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${openTab === 'v1.1' ? 'max-h-[2000px] pb-8 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className="space-y-6 text-lg text-gray-300 font-light leading-relaxed pt-4 border-t border-white/10">
+                    <p>
+                      As requested by many users, eResus now hosts a brand new <strong>Newborn Life Support Module</strong>: A fully interactive interface and algorithm to guide you through transition-to-life and newborn resuscitation.
+                    </p>
+                    
+                    <p>We have also...</p>
+                    
+                    <ul className="space-y-4 pl-2">
+                      <li className="flex items-start">
+                        <Check className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-0.5" />
+                        <span><strong>Improved Drug Logic:</strong> Enhanced backend calculations for faster, safer drug administration prompts.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-0.5" />
+                        <span><strong>Better Handovers:</strong> Improved the saved summary and log layout to make your handovers as smooth as possible. All saved logs prior to this update will remain visible, but some users may experience inaccurate details.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="w-6 h-6 text-red-500 mr-4 shrink-0 mt-0.5" />
+                        <span><strong>General UI & Bug Fixes:</strong> Performance updates and layout refinements for a smoother, more reliable experience in the field.</span>
+                      </li>
+                    </ul>
+
+                    <div className="pt-6 mt-6 border-t border-white/10">
+                      <p className="text-xl font-medium text-white italic">
+                        Master every resus with eResus. Real-time algorithms, precise drug calculations, and now a brand-new Newborn Life Support interface. Built for clinicians, by clinicians.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
